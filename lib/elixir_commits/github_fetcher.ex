@@ -7,7 +7,7 @@ defmodule ElixirCommits.GithubFetcher do
 
   defp extract_commits(body) do
     # Extract all of the commit elements
-    lc e inlist body, do: e["commit"]
+    for e <- body, do: e["commit"]
   end
 
   defp get(page) do
