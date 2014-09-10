@@ -10,10 +10,11 @@ defmodule ElixirCommits.GithubFetcher do
     for e <- body, do: e["commit"]
   end
 
-  defp get(page) do
+  def get(page) do
     {:ok, 200, _headers, client} = :hackney.get(url_for(page))
     {:ok, body} = :hackney.body(client)
-    ExJSON.parse(body, :to_map)
+    {:ok, result} = JSON.decode(body)
+    result
   end
 
   defp url_for(page) do

@@ -4,7 +4,7 @@ defmodule ElixirCommits.Mixfile do
   def project do
     [ app: :elixir_commits,
       version: "0.0.1",
-      elixir: "~> 0.13.2",
+      elixir: "~> 0.15.1",
       deps: deps ]
   end
 
@@ -30,7 +30,7 @@ defmodule ElixirCommits.Mixfile do
   defp deps do
     [
       { :hackney, github: 'benoitc/hackney' },
-      { :exjson, github: 'guedes/exjson' }
+      { :json, "~> 0.3.0"  }
     ]
   end
 end
